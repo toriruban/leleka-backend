@@ -1,14 +1,10 @@
 const express = require('express');
 const authenticate = require('../middlewares/authenticate.js');
+const { getProfile, updateProfile } = require('../controllers/userController.js')
 
 const router = express.Router();
 
-router.get('/profile', authenticate, (req, res) => {
-    const { token, password, ...user } = req.user.toObject();
-    res.json({ 
-        message: 'Profile retrieved successfully',
-        user: user
-    });
-});
+router.get('/profile', authenticate, getProfile);
+router.patch('/profile', authenticate, updateProfile);
 
 module.exports = router;

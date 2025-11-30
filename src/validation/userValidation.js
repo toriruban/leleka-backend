@@ -66,7 +66,27 @@ const loginSchema = Joi.object({
    }),
 });
 
+const updateProfileSchema = Joi.object({
+    name: Joi.string()
+    .min(2)
+    .max(32)
+    .trim(),
+
+    email: Joi.string()
+    .email()
+    .trim(),
+
+    babyGender: Joi.string()
+    .valid('boy', 'girl', null)
+    .allow(null),
+
+    dueDate: Joi.date()
+    .iso()
+    .allow(null)
+}).min(1);
+
 module.exports = {
     registerSchema, 
     loginSchema,
+    updateProfileSchema,
 };
