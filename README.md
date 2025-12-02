@@ -112,18 +112,22 @@ Server runs on `http://localhost:8000`
 leleka-backend/
 ├── src/
 │   ├── config/
-│   │   └── db.js              # MongoDB connection
+│ 
 │   ├── controllers/
 │   │   ├── authController.js  # Auth logic
 │   │   └── userController.js  # User logic
+│       └── taskController.js  # Task logic
 │   ├── middlewares/
 │   │   ├── authenticate.js    # JWT verification
 │   │   └── upload.js          # Multer config
+│       └── validate.js        # Validate schema
 │   ├── models/
 │   │   └── User.js            # User schema
+│   │   └── Task.js            # Task schema
 │   ├── routes/
 │   │   ├── authRoutes.js      # Auth endpoints
 │   │   └── userRoutes.js      # User endpoints
+│       └── taskRoutes.js      # Task endpoints
 │   ├── validation/
 │   │   ├── authValidation.js  # Auth schemas
 │   │   └── userValidation.js  # User schemas

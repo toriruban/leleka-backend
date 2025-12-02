@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/register', 
             validate(registerSchema),
-           register,       
+            register,       
         );
 router.post('/login',
             validate(loginSchema), 

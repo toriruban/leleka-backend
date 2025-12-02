@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes')
+const userRoutes = require('./routes/userRoutes');
+const taskRoutes = require('./routes/taskRoutes')
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes); 
 app.use('/api/users', userRoutes);
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+app.use('/api/tasks', taskRoutes);
 
 app.get('/', (req, res) => {
     res.json({message: 'Leleka app is running'});
