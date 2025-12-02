@@ -42,9 +42,9 @@ Backend REST API for pregnancy tracking application.
 
 | Method | Endpoint | Description | Auth | Status |
 |--------|----------|-------------|------|--------|
-| POST | `/` | Create task | ✅ |
-| GET | `/` | Get all tasks | ✅ |
-| PATCH | `/:id` | Update task status | ✅
+| POST | `/` | Create task | ✅ | ✅ |
+| GET | `/` | Get all tasks | ✅ | ✅ |
+| PATCH | `/:id` | Update task status | ✅ | ✅ |
 
 ### 📖 Diary (`/api/diary`)
 
@@ -73,7 +73,7 @@ Backend REST API for pregnancy tracking application.
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/leleka-backend.git
+git clone https://github.com/toriruban/leleka-backend
 cd leleka-backend
 
 # Install dependencies
@@ -91,8 +91,8 @@ nano .env
 Create `.env` file in root:
 ```env
 PORT=8000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/leleka
-JWT_SECRET=super_secret_jwt_key_change_this
+MONGODB_URI=mongodb+srv:
+JWT_SECRET=super_secret_jwt_key
 NODE_ENV=development
 ```
 
@@ -140,7 +140,7 @@ leleka-backend/
 
 All protected endpoints require JWT token in header:
 ```
-Authorization: Bearer YOUR_JWT_TOKEN
+Authorization: Bearer JWT_TOKEN
 ```
 
 ## 📸 Avatar Upload

@@ -27,15 +27,8 @@ const userSchema = new mongoose.Schema({
         default: null
     },
     dueDate: {
-        type: String,
+        type: Date,
         default: null,
-        validate: {
-            validator : function(v) {
-                if(!v) return true;
-                return /^\d{4}-\d{2}-\d{2}$/.test(v)
-            }, 
-            message: 'dueDate must be in format YYYY-MM-DD'
-        }
     },
     avatar: {
         type: String,

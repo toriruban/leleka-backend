@@ -51,5 +51,30 @@ const updateProfile = async(req,res) => {
             error: error.message
         });
     }
-}
-module.exports = { getProfile, updateProfile };
+};
+
+const updateAvatar = async (req, res) => {
+    try {
+        if(!req.file) {
+            return res.status(400).json({
+                message: 'No file upload',
+            })
+        };
+        const avatarUrl = `/uploads/${req.file.fileName}`;
+        req.user.avatar = avatarUrl;
+        await req.user.save();
+
+        res.status(200).json({
+            message: 'Avatar successfully uploaded',
+            avatar: avatarUrl
+        });
+    } catch(error) {
+        console.error('Update avatar error:', error)
+        res.status(500).json({
+            message: 'Server error',
+            error: error.message
+        });
+    }
+};
+
+module.exports = { getProfile, updateProfile, updateAvatar };
