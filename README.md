@@ -50,10 +50,10 @@ Backend REST API for pregnancy tracking application.
 
 | Method | Endpoint | Description | Auth | Status |
 |--------|----------|-------------|------|--------|
-| POST | `/` | Create diary entry | ✅ | ❌ TODO |
-| GET | `/` | Get all diary entries | ✅ | ❌ TODO |
-| PATCH | `/:id` | Update diary entry | ✅ | ❌ TODO |
-| DELETE | `/:id` | Delete diary entry | ✅ | ❌ TODO |
+| POST | `/` | Create diary entry | ✅ | ✅ |
+| GET | `/` | Get all diary entries | ✅ | ✅ |
+| PATCH | `/:id` | Update diary entry | ✅ | ✅ |
+| DELETE | `/:id` | Delete diary entry | ✅ | ✅ |
 
 ### 📅 Weeks (`/api/weeks`)
 
@@ -116,7 +116,8 @@ leleka-backend/
 │   ├── controllers/
 │   │   ├── authController.js  # Auth logic
 │   │   └── userController.js  # User logic
-│       └── taskController.js  # Task logic
+│   │   └── taskController.js  # Task logic
+│   │   └── DiaryController.js # Diary logic
 │   ├── middlewares/
 │   │   ├── authenticate.js    # JWT verification
 │   │   └── upload.js          # Multer config
@@ -124,13 +125,16 @@ leleka-backend/
 │   ├── models/
 │   │   └── User.js            # User schema
 │   │   └── Task.js            # Task schema
+│   │   └── Dairy.js           # Dairy schema
 │   ├── routes/
 │   │   ├── authRoutes.js      # Auth endpoints
 │   │   └── userRoutes.js      # User endpoints
 │       └── taskRoutes.js      # Task endpoints
+│       └── diaryRoutes.js     # Diary endpoints
 │   ├── validation/
 │   │   ├── authValidation.js  # Auth schemas
 │   │   └── userValidation.js  # User schemas
+│   │   └── diaryValidation.js # Diary schemas
 │   └── app.js                 # Express app
 ├── uploads/                    # Avatar uploads
 ├── .env                        # Environment variables
